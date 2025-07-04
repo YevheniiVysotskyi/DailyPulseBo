@@ -1,0 +1,6 @@
+@BoroClubDailyPulseAPI_HostAddress = http://localhost:5263
+
+GET {{BoroClubDailyPulseAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

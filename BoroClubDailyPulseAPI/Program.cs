@@ -14,9 +14,8 @@ builder.Services.Configure<OpenAiOptions>(
 builder.Services.Configure<PromptOptions>(
         builder.Configuration.GetSection("Prompts"));
 
-builder.Services.AddDbContext<AppDbContext>(opt =>
-    opt.UseSqlServer(
-        builder.Configuration.GetConnectionString("Default")));
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("Default")));
 
 builder.Services.AddHttpClient();
 
